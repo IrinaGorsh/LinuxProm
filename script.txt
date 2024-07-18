@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "Введите путь к директории: " DELDIR
+
+if [ -e $DELDIR ]
+        then
+
+                echo 'Директория найдена'
+                cd $DELDIR
+                echo 'Удаление файлов'
+                rm -v *.bak *.backup *.tmp
+                echo 'Файлы удалены успешно'
+        else
+                echo 'Директория не найдена'
+                exit 2
+fi
